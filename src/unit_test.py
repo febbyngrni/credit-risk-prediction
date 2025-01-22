@@ -6,9 +6,9 @@ import preprocessing
 
 def test_features_shape():
     # arrange
-    X_train = utils.load_joblib("data/processed/X_train_final.pkl")
-    X_valid = utils.load_joblib("data/processed/X_valid_final.pkl")
-    X_test = utils.load_joblib("data/processed/X_test_final.pkl")
+    X_train = utils.load_joblib("data/interim/X_train.pkl")
+    X_valid = utils.load_joblib("data/interim/X_valid.pkl")
+    X_test = utils.load_joblib("data/interim/X_test.pkl")
 
     # act
     N_COLS_THRESH = 11
@@ -21,7 +21,7 @@ def test_features_shape():
 def test_ohe_transform():
     # arrange
     params = utils.load_params(params_dir="config/config.yaml")
-    params['object_columns'] = ['person_home_ownership']
+    params['ohe_columns'] = ['person_home_ownership']
 
     mock_data = pd.DataFrame({'person_home_ownership' : ['RENT', 'MORTGAGE', 'OWN', 'RENT']})
     expected_columns = ['person_home_ownership_RENT']
@@ -36,7 +36,7 @@ def test_ohe_transform():
         assert col in transformed_data, f'{col} not found in transformed data columns'
 
     pd.testing.assert_frame_equal(
-        transformed_data[expected_values].reset_index(drop=True),
+        transformed_data[expected_values.columns].reset_index(drop=True),
         expected_values,
         check_dtype=False
     )

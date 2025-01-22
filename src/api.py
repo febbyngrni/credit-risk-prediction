@@ -60,7 +60,7 @@ def predict(data: APIData):
         return {
             'res' : [],
             'error_msg' : str(e),
-            'status_code' : 600
+            'status_code' : 500
         }
     
     y_pred = best_model.predict(df_data)
@@ -69,7 +69,7 @@ def predict(data: APIData):
         return {
             'res' : 'Failed API',
             'credit_risk_prediction' : None,
-            'status_code' : 700,
+            'status_code' : 500,
             'error_msg' : 'Prediction returned None.'
         }
     
@@ -79,3 +79,6 @@ def predict(data: APIData):
         "status_code": 200,
         "error_msg": ""
     }
+
+if __name__ == "__main__":
+    uvicorn.run("api:app", host = "127.0.0.1", port = 8000)

@@ -86,6 +86,6 @@ if __name__ == '__main__':
     y_pred_final = best_rf_tune.predict(X_test_final)
 
     print('Classification Report Final Model')
-    print(classification_report(y_true = y_valid, y_pred = y_pred_final))
+    print(classification_report(y_true = y_test, y_pred = y_pred_final))
 
     utils.dump_joblib(best_rf_tune, "models/rf_best_model_v2.pkl")
