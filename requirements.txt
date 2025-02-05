@@ -1,0 +1,10 @@
+tqdm==4.67.1
+scikit-learn==1.6.1
+pandas==2.2.3
+numpy==2.2.1
+seaborn==0.13.2
+fastapi[standard]==0.115.6
+streamlit==1.41.1
+SQLAlchemy==2.0.37
+psycopg2-binary==2.9.10
+pytest==8.3.4
