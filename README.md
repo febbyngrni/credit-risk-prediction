@@ -77,7 +77,7 @@ SHAP summary plot ini menunjukkan bagaimana setiap fitur berkontribusi terhadap 
 - Loan Interest Rate — Suku bunga yang lebih tinggi (merah) meningkatkan kemungkinan default, yang menunjukkan bahwa beban bunga berperan dalam ketidakmampuan membayar.
 
 ## Implementation
-Untuk menjalankan model ini, gunakan FastAPI dengan perintah berikut:
+Untuk menjalankan model ini, gunakan FastAPI dengan command berikut:
 ``` bash
   fastapi dev api.py
 ```
@@ -110,6 +110,11 @@ Output:
 ```
 
 ### Stramlit Interface
+Untuk menjalankan model ini pada streamlit gunakan command ini:
+``` bash
+  streamlit run app.py
+```
+
 ![Screenshot (101)](https://github.com/user-attachments/assets/b21982d4-7ec0-4d38-97d1-683b2143f9c9)
 
 ## Conclusion
