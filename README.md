@@ -23,10 +23,10 @@ Model dievaluasi menggunakan **F2 Score**, yang lebih menekankan pada recall dib
 ## Preprocessing
 Preprocessing dilakukan untuk mempersiapkan data sebelum pelatihan model dengan tahapan berikut:
 
-- Handling Missing Values: Mengisi loan_int_rate (9.59% missing) dan person_emp_length (2.80% missing) dengan median.
-- Handling Outliers: Memfilter data tidak make sense, seperti person_age > 140 tahun dan person_emp_length > 120 tahun.
-- One-Hot Encoding: Digunakan untuk fitur kategori nominal.
-- Label Encoding: Diterapkan pada loan grade karena memiliki tingkatan dari A (terbaik) hingga G (terburuk).
+- **Handling Missing Values**: Mengisi loan_int_rate (9.59% missing) dan person_emp_length (2.80% missing) dengan median.
+- **Handling Outliers**: Memfilter data tidak make sense, seperti person_age > 140 tahun dan person_emp_length > 120 tahun.
+- **One-Hot Encoding**: Digunakan untuk fitur kategori nominal.
+- **Label Encoding**: Diterapkan pada loan grade karena memiliki tingkatan dari A (terbaik) hingga G (terburuk).
 
 ## Result
 
@@ -70,11 +70,11 @@ Dari percobaan berbagai nilai threshold, ditemukan bahwa threshold optimal untuk
 ![o1](https://github.com/user-attachments/assets/85288c42-bb04-4a0e-976e-3b117dfa70c8)
 
 SHAP summary plot ini menunjukkan bagaimana setiap fitur berkontribusi terhadap keputusan model dalam menentukan risiko kredit. Beberapa insight dari plot ini:
-- Loan Percent Income — Fitur paling berpengaruh dalam prediksi default. Semakin tinggi proporsi pinjaman terhadap pendapatan (warna merah), semakin besar dampaknya terhadap kemungkinan default (SHAP value positif).
-- Loan Grade — Grade pinjaman juga memiliki pengaruh besar, dengan nilai yang lebih rendah (cenderung biru) berkontribusi pada risiko default yang lebih kecil.
-- Person Income — Penghasilan individu memiliki korelasi negatif dengan kemungkinan default; semakin tinggi income (merah), semakin kecil kemungkinan gagal bayar.
-- Person Home Ownership (RENT) — Pelanggan yang menyewa rumah cenderung memiliki risiko lebih tinggi dibandingkan mereka yang memiliki properti sendiri.
-- Loan Interest Rate — Suku bunga yang lebih tinggi (merah) meningkatkan kemungkinan default, yang menunjukkan bahwa beban bunga berperan dalam ketidakmampuan membayar.
+- **Loan Percent Income** — Fitur paling berpengaruh dalam prediksi default. Semakin tinggi proporsi pinjaman terhadap pendapatan (warna merah), semakin besar dampaknya terhadap kemungkinan default (SHAP value positif).
+- **Loan Grade** — Grade pinjaman juga memiliki pengaruh besar, dengan nilai yang lebih rendah (cenderung biru) berkontribusi pada risiko default yang lebih kecil.
+- **Person Income** — Penghasilan individu memiliki korelasi negatif dengan kemungkinan default; semakin tinggi income (merah), semakin kecil kemungkinan gagal bayar.
+- **Person Home Ownership (RENT)** — Pelanggan yang menyewa rumah cenderung memiliki risiko lebih tinggi dibandingkan mereka yang memiliki properti sendiri.
+- **Loan Interest Rate** — Suku bunga yang lebih tinggi (merah) meningkatkan kemungkinan default, yang menunjukkan bahwa beban bunga berperan dalam ketidakmampuan membayar.
 
 ## Implementation
 Untuk menjalankan model ini, gunakan FastAPI dengan command berikut:
