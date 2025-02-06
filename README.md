@@ -66,6 +66,15 @@ Dari percobaan berbagai nilai threshold, ditemukan bahwa threshold optimal untuk
 - Precision turun ke 0.70, menyebabkan lebih banyak false positives, yang bisa membuat beberapa pelanggan aman dianggap berisiko.
 - Akurasi turun dari 0.94 ke 0.88, tetapi ini sejalan dengan tujuan meningkatkan recall dalam mendeteksi kredit macet.
 
+![output](https://github.com/user-attachments/assets/fce94b44-4629-45c2-8066-fb7791417d84)
+
+- **True Positive (TP)**: 922 → Kasus default yang benar terprediksi default.
+- **False Positive (FP)**: 397 → Kasus non-default yang salah diklasifikasikan sebagai default.
+- **False Negative (FN)**: 212 → Kasus default yang salah diklasifikasikan sebagai non-default.
+- **True Negative (TN)**: 3665 → Kasus non-default yang benar diklasifikasikan sebagai non-default.
+
+Meskipun banyak terdapat false positives, trade-off ini sejalan dengan tujuan utama model, yaitu meningkatkan recall dalam mendeteksi pelanggan berisiko tinggi, sehingga Bank Republik dapat mengelola risiko kredit dengan lebih baik.
+
 ## SHAP Analysis
 ![o1](https://github.com/user-attachments/assets/85288c42-bb04-4a0e-976e-3b117dfa70c8)
 
